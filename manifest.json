@@ -1,0 +1,41 @@
+{
+  "name": "Translation-GPT",
+  "version": "1.0.1",
+  "manifest_version": 3,
+  "description": "Translate web pages using chatgpt",
+  "icons": {
+    "16": "images/icon-16.png",
+    "24": "images/icon-24.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/main.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/service-worker.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "24": "images/icon-24.png",
+      "32": "images/icon-32.png"
+    },
+    "default_title": "Translation-GPT",
+    "default_popup": "index.html"
+  },
+  "commands": {
+    "translate": {
+      "suggested_key": {
+        "default": "Ctrl+T",
+        "mac": "Command+T"
+      },
+      "description": "11111"
+    }
+  }
+}
